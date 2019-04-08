@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-  <br><center><h2>Create New Course</h2></center>
+  <br><center><h2>My Courses</h2></center>
   <div class="container">
       <div class="my-courses">
         @foreach($user->courses as $course)
