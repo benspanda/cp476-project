@@ -11,6 +11,17 @@
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});
+Route::get('/', 'HomeController@index')->name('index');
+Route::get('/join-course', 'HomeController@joinCourse')->name('joinCourse');
+Route::get('/create-course', 'HomeController@createCourse')->name('createCourse');
+Route::get('/about', 'HomeController@about')->name('about');
+
+// actions
+Route::post('/action/create-course', 'HomeController@actionCreateCourse')->name('actionCreateCourse');
+
+// logout link
+Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout');
+
+Auth::routes();
+
+// Route::get('/home', 'HomeController@index')->name('home');
