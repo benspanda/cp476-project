@@ -254,3 +254,35 @@ header {
   font-size: 18px;
   color: #797979;
 }
+
+.my-courses {
+  width: 100%;
+}
+
+.my-courses a {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #d0d0d0;
+  margin-top: 20px;
+  align-self: center;
+  border-radius: 3px;
+  padding: 20px;
+  background-color: #fbfbfb;
+  transition: background-color .3s;
+}
+
+.my-courses a:hover {
+  text-decoration: none;
+  background-color: #e4e4e4;
+}
+
+.my-course-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: black;
+}
+
+.my-course-detail {
+  font-size: 15px;
+  color: #676767;
+}

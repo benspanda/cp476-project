@@ -1,18 +1,6 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Chat Page</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,700,800" rel="stylesheet">
-  <link rel="stylesheet" type="text/css" media="screen" href="assets/css/main.css" />
-  <script src="assets/js/main.js"></script>
-    
-</head>
-<body>
-           <?php include('header.php') ?>
+@extends('layouts.app')
 
+@section('content')
   <div class="container">
       <div class="sidebar-menu">
         <p class="sidebar-label">Public Discussions</p>
@@ -46,8 +34,4 @@
       </div>
     </div>
   </div>
-    
-               <?php include('footer.php') ?>
-
-</body>
-</html>
+@endsection

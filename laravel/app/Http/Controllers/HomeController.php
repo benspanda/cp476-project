@@ -4,6 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use \App\Courses as Courses;
+use \App\UserXCourse as UserXCourse;
+use Auth;
+
 class HomeController extends Controller
 {
     /**
@@ -19,6 +23,13 @@ class HomeController extends Controller
     // render index
     public function index()
     {
+        // if the user is logged in, show a list of there chats
+        if(Auth::check()) {
+            $user = Auth::user();
+
+            return view('my-chats', compact('user'));
+        }
+        
         return view('index');
     }
 
@@ -43,6 +54,26 @@ class HomeController extends Controller
     // create a course
     public function actionCreateCourse()
     {
-        echo 'stank';
+        // create the new course
+        $course = new Courses();
+        $course->user_id = Auth::id();
+        $course->name = $_POST['name'];
+        $course->code = $_POST['code'];
+        $course->access_code = str_random(16);
+        $course->save();
+
+        $user_x_course = new UserXCourse();
+        $user_x_course->user_id = Auth::id();
+        $user_x_course->course_id = $course->id;
+        $user_x_course->admin = 1;
+        $user_x_course->save();
+
+        return redirect('course/' . $course->id);
+    }
+
+    // view course
+    public function viewCourse()
+    {
+        return view('chat');
     }
 }

@@ -36,4 +36,10 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    // the courses the user is a part of
+    public function courses()
+    {
+        return $this->belongsToMany('App\Courses', 'user_x_course', 'user_id', 'course_id');
+    }
 }

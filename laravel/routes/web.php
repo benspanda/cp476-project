@@ -16,6 +16,8 @@ Route::get('/join-course', 'HomeController@joinCourse')->name('joinCourse');
 Route::get('/create-course', 'HomeController@createCourse')->name('createCourse');
 Route::get('/about', 'HomeController@about')->name('about');
 
+Route::get('/course/{id}', 'HomeController@viewCourse')->name('viewCourse');
+
 // actions
 Route::post('/action/create-course', 'HomeController@actionCreateCourse')->name('actionCreateCourse');
 
