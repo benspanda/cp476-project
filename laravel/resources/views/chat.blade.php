@@ -15,18 +15,19 @@
     <div class="content">
       <div class="content-bottom">
         <div class="messages">
-          <div class="message">
-            <p class="message-details"><span class="pop">Elmo</span> 5 minutes ago</p>
-            <p class="message-content">How do I write code?</p>
-          </div>
-          <div class="message">
-            <p class="message-details"><span class="pop">Barack Obama</span> Just now</p>
-            <p class="message-content">1001101</p>
-          </div>
+          @if(!count($course->messages))
+            <p>No messages.</p>
+          @endif
+          @foreach($course->messages as $message)
+            <div class="message">
+              <p class="message-details"><span class="pop">{{ $message->user->name }}</span> {{ $message->created_at->diffForHumans() }}</p>
+              <p class="message-content">{{ $message->content }}</p>
+            </div>
+          @endforeach
         </div>
         <div class="compose">
           <textarea placeholder="Message.."></textarea>
-          <a href="#send">Send</a>
+          <input type="submit" value="Send" course-id="{{ $course->id }}">
         </div>
       </div>
     </div>

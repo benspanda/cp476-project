@@ -15,4 +15,8 @@ class Courses extends Model
     public function teacher() {
         return $this->hasOne('App\User', 'id', 'user_id');
     }
+
+    public function messages() {
+        return $this->hasMany('App\Messages', 'course_id');
+    }
 }

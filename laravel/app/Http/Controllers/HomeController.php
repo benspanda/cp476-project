@@ -4,8 +4,11 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use Pusher;
+
 use \App\Courses as Courses;
 use \App\UserXCourse as UserXCourse;
+use \App\Messages as Messages;
 use Auth;
 
 class HomeController extends Controller
@@ -88,8 +91,49 @@ class HomeController extends Controller
     // view course
     public function viewCourse($id)
     {
+        
+        // $options = array(
+        //     'cluster' => 'us2',
+        //     'useTLS' => true
+        // );
+        // $pusher = new Pusher\Pusher(
+        //     '62129c85d10afca8543e',
+        //     '3e19fbd139dd32f62c52',
+        //     '756057',
+        //     $options
+        // );
+
+        // $data['message'] = 'hello world';
+        // $pusher->trigger('my-channel', 'my-event', $data);
+
+        
         $course = Courses::find($id);
 
         return view('chat', compact('course'));
+    }
+
+    // send message
+    public function actionSendMessage() {
+        
+        // save new message
+        $message = new Messages();
+        $message->user_id = Auth::id();
+        $message->content = $_POST['message'];
+        $message->course_id = $_POST['id'];
+        $message->save();
+
+        $options = array(
+            'cluster' => 'us2',
+            'useTLS' => true
+        );
+        $pusher = new Pusher\Pusher(
+            '62129c85d10afca8543e',
+            '3e19fbd139dd32f62c52',
+            '756057',
+            $options
+        );
+
+        $data['message'] = 'New Message';
+        $pusher->trigger('my-channel', 'my-event', $data);
     }
 }

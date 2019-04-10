@@ -25,6 +25,7 @@ Route::middleware(['auth'])->group(function () {
     // actions
     Route::post('/action/create-course', 'HomeController@actionCreateCourse')->name('actionCreateCourse');
     Route::post('/action/join-course', 'HomeController@actionJoinCourse')->name('actionJoinCourse');
+    Route::post('/action/send-message', 'HomeController@actionSendMessage')->name('actionSendMessage');
 
     // logout
     Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout');
