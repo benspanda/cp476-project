@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <center><h1>Why Teach-It?</h1></center><br><br>
+    <center class="about-title"><h1>Why Teach-It?</h1></center><br><br>
     <div class = "container d-flex justify-content-center">
   
             <div class="row">
@@ -60,7 +60,7 @@
   <div class="col">
     
           <div class="text-right">
-              <img src = "https://i.imgur.com/Q1u5kiv.png" height = "200px"><br><br>
+              <img src = "/images/login.png" height = "200px"><br><br>
               
               
       </div>
@@ -70,7 +70,7 @@
             <div class="col">
    
           <div class="text-left">
-              <img src = "https://i.imgur.com/uBafYD5.png" height = "200px"><br><br>
+              <img src = "/images/register.png" height = "200px"><br><br>
                                  
    
       </div>
@@ -82,14 +82,13 @@
         
     <h3>2. Create a New Course (for teachers)</h3><br>
         <h5>If you're a teacher, you can create a new chatroom for your students. Simply enter the course code and the course name. You'll then be given a unique key that you can give your students so they can join the chat.</h5><br>
-        <img src = "https://i.imgur.com/silFnrd.png" width = "600px"><br><br>
-        <img src = "https://i.imgur.com/NW7IRmD.png" width = "600px"><br><br>
+        <img src = "/images/create-course.png" width = "600px"><br><br>
     <h3>3. Join a Chat (for students)</h3><br>
         <h5>If you're a student, you can join a chatroom given you have a key for it (provided by your teacher). </h5><br><br>
-        <img src = "https://i.imgur.com/j6L5KiQ.png" width = "600px"><br><br>
+        <img src = "/images/join-course.png" width = "600px"><br><br>
         <h3>4. CHAT!</h3><br>
         <h5>Here in the chatroom, both students and teachers can interact. Students can ask questions about homework, assignments etc. and teachers can respond instantly.</h5><br>
-        <img src = "https://i.imgur.com/DUVEgRr.png" width = "600px"><br><br>
+        <img src = "/images/chat.png" width = "600px"><br><br>
 </center></div>
     <br><br>
 @endsection

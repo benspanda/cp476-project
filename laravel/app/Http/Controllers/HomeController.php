@@ -10,16 +10,6 @@ use Auth;
 
 class HomeController extends Controller
 {
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
-
     // render index
     public function index()
     {
@@ -66,6 +56,30 @@ class HomeController extends Controller
         $user_x_course->user_id = Auth::id();
         $user_x_course->course_id = $course->id;
         $user_x_course->admin = 1;
+        $user_x_course->save();
+
+        return redirect('course/' . $course->id);
+    }
+
+    // join a course
+    public function actionJoinCourse()
+    {
+        // find the course
+        $course = Courses::where('access_code', $_POST['access_code'])->first();
+        if(empty($course)) {
+            return back()->withInput()->withErrors(['Error: Course does not exist.']);
+        }
+
+        // check that the user isnt already in a course
+        $existing = UserXCourse::where('user_id', Auth::id())->where('course_id', $course->id)->get();
+        if(!empty($existing)) {
+            return back()->withInput()->withErrors(['Error: You are already in that course.']);
+        }
+
+        $user_x_course = new UserXCourse();
+        $user_x_course->user_id = Auth::id();
+        $user_x_course->course_id = $course->id;
+        $user_x_course->admin = 0;
         $user_x_course->save();
 
         return redirect('course/' . $course->id);

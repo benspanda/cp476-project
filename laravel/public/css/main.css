@@ -356,3 +356,19 @@ a:hover {
 .site-footer img {
   margin-right: 5px;
 }
+
+.status-message {
+  padding: 10px 15px;
+  background-color: #607D8B;
+  border-radius: 5px;
+  color: #ffffff;
+  box-shadow: 0 1px 7px -2px black;
+}
+
+.about-title {
+  margin-top: 30px;
+}
+
+form .btn-info {
+  width: 100%;
+}

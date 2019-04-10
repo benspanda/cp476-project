@@ -11,18 +11,24 @@
 |
 */
 
+// public
 Route::get('/', 'HomeController@index')->name('index');
-Route::get('/join-course', 'HomeController@joinCourse')->name('joinCourse');
-Route::get('/create-course', 'HomeController@createCourse')->name('createCourse');
 Route::get('/about', 'HomeController@about')->name('about');
 
-Route::get('/course/{id}', 'HomeController@viewCourse')->name('viewCourse');
+// must be authenticated
+Route::middleware(['auth'])->group(function () {
+    // pages
+    Route::get('/join-course', 'HomeController@joinCourse')->name('joinCourse');
+    Route::get('/create-course', 'HomeController@createCourse')->name('createCourse');
+    Route::get('/course/{id}', 'HomeController@viewCourse')->name('viewCourse');
 
-// actions
-Route::post('/action/create-course', 'HomeController@actionCreateCourse')->name('actionCreateCourse');
+    // actions
+    Route::post('/action/create-course', 'HomeController@actionCreateCourse')->name('actionCreateCourse');
+    Route::post('/action/join-course', 'HomeController@actionJoinCourse')->name('actionJoinCourse');
 
-// logout link
-Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout');
+    // logout
+    Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout');
+});
 
 Auth::routes();
 

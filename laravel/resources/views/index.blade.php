@@ -13,7 +13,7 @@
               
               <h6>An interactive chat messaging system for teachers and students.</h6><br>
               
-  <button type="button" class="btn btn-info mr-3"><a class = "text-white" href="about.php">Learn More</a></button>   
+        <button type="button" class="btn btn-info mr-3"><a class = "text-white" href="{{ route('about') }}">Learn More</a></button>   
       </div>
         
    
