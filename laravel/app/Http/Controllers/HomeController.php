@@ -72,8 +72,10 @@ class HomeController extends Controller
     }
 
     // view course
-    public function viewCourse()
+    public function viewCourse($id)
     {
-        return view('chat');
+        $course = Courses::find($id);
+
+        return view('chat', compact('course'));
     }
 }

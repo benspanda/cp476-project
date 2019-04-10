@@ -1,21 +1,18 @@
 @extends('layouts.app')
 
 @section('content')
-  <div class="container">
-      <div class="sidebar-menu">
-        <p class="sidebar-label">Public Discussions</p>
-        <a href="">Unit #1</a>
-        <a href="">Unit #2</a>
-        <a href="">Unit #3</a>
-        <a href="">Assignment #1</a><br>
-        <p class="sidebar-label">Private Messages</p>
-        <a href="">Barack Obama</a>
-        <a href="">Elmo</a>
-      </div>
+  <div class="course-header">
+    <h2>{{ $course->code }}: {{ $course->name }}</h2>
+    <p>Unique course access code: {{ $course->access_code }}</p>
+  </div>
+  <div class="container chat-container">
+    <div class="sidebar-menu">
+      <p class="sidebar-label">Members</p>
+      @foreach($course->users as $u)
+        <p class="sidebar-member">{{ $u->name }} {!! $u->id == $course->user_id ? '<span>(Admin)</span>' : '' !!}</p>
+      @endforeach
+    </div>
     <div class="content">
-      <div class="content-top">
-        <h2>Unit #2</h2>
-      </div>
       <div class="content-bottom">
         <div class="messages">
           <div class="message">

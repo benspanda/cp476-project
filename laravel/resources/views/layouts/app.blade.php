@@ -16,19 +16,22 @@
     
   <nav class="navbar navbar-expand-sm bg-white">
     
+      <a href="/">
         <ul class="navbar-nav mr-auto">
-        <li class="nav-item"><img class = "ml-3 mr-3" src="https://openclipart.org/download/289348/Pencil-2d.svg" width="60" alt="Colorful Rainbow Clipart" />
-            </li>
- <li class="nav-item">
-            <h1>Teach-It</h1>
-            </li>
-    </ul>
+          <li class="nav-item">
+            <img class = "ml-3 mr-3" src="https://openclipart.org/download/289348/Pencil-2d.svg" width="60" alt="Colorful Rainbow Clipart" />
+          </li>
+          <li class="nav-item">
+              <h1>Teach-It</h1>
+          </li>
+        </ul>
+      </a>
 
                 <ul class="navbar-nav ml-auto">
-      <li class = "nav-item"><button type="button" class="btn btn-link mr-3"><a class = "text-muted" href="{{ route('index') }}">Home</a></button></li>
-                  <li class = "nav-item"><button type="button" class="btn btn-link mr-3"><a class = "text-muted" href="{{ route('about') }}">About Us</a></button></li>
-                     <li class = "nav-item"><button type="button" class="btn btn-link mr-3"><a class = "text-muted" href="{{ route('createCourse') }}">Create a Chat</a></button></li>
-            <li class = "nav-item"><button type="button" class="btn btn-link mr-3"><a class = "text-muted" href="{{ route('joinCourse') }}">Join a Chat</a></button></li>
+      <li class = "nav-item"><button type="button" class="btn mr-3"><a class = "text-muted" href="{{ route('index') }}">Home</a></button></li>
+                  <li class = "nav-item"><button type="button" class="btn mr-3"><a class = "text-muted" href="{{ route('about') }}">About Us</a></button></li>
+                     <li class = "nav-item"><button type="button" class="btn mr-3"><a class = "text-muted" href="{{ route('createCourse') }}">Create a Chat</a></button></li>
+            <li class = "nav-item"><button type="button" class="btn mr-3"><a class = "text-muted" href="{{ route('joinCourse') }}">Join a Chat</a></button></li>
        
           @if (!Auth::check())
             <li class = "nav-item"><button type="button" class="btn btn-info mr-3"><a class = "text-white" href="{{ route('login') }}">Login</a></button></li>
@@ -43,19 +46,9 @@
     
     @yield('content')
 
-  <nav class="navbar navbar-expand-lg bg-white">
-        <ul class="navbar-nav mr-auto">
-     
- 
-    </ul>
-
-                <ul class="navbar-nav ml-auto">
-                    <li class = "nav-item">
-     © 2019 <img src="https://openclipart.org/download/289348/Pencil-2d.svg" width="20" alt="Colorful Rainbow Clipart" /> Teach-It, Inc. All rights reserved
-   
-                    </li>
-    </ul>
-    
+  <nav class="navbar navbar-expand-lg site-footer">
+        
+     <img src="https://openclipart.org/download/289348/Pencil-2d.svg" width="20" alt="Colorful Rainbow Clipart" /> Teach-It, Inc. All rights reserved © 2019 
     </nav> 
 
 </body>
