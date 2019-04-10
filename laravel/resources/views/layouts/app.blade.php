@@ -28,16 +28,16 @@
       </a>
 
                 <ul class="navbar-nav ml-auto">
-      <li class = "nav-item"><button type="button" class="btn mr-3"><a class = "text-muted" href="{{ route('index') }}">Home</a></button></li>
-                  <li class = "nav-item"><button type="button" class="btn mr-3"><a class = "text-muted" href="{{ route('about') }}">About Us</a></button></li>
-                     <li class = "nav-item"><button type="button" class="btn mr-3"><a class = "text-muted" href="{{ route('createCourse') }}">Create a Chat</a></button></li>
-            <li class = "nav-item"><button type="button" class="btn mr-3"><a class = "text-muted" href="{{ route('joinCourse') }}">Join a Chat</a></button></li>
+      <li class = "nav-item"><a class = "text-muted btn mr-3" href="{{ route('index') }}">Home</a></li>
+                  <li class = "nav-item"><a class = "text-muted btn mr-3" href="{{ route('about') }}">About Us</a></li>
+                     <li class = "nav-item"><a class = "text-muted btn mr-3" href="{{ route('createCourse') }}">Create a Chat</a></li>
+            <li class = "nav-item"><a class = "text-muted btn mr-3" href="{{ route('joinCourse') }}">Join a Chat</a></li>
        
           @if (!Auth::check())
-            <li class = "nav-item"><button type="button" class="btn btn-info mr-3"><a class = "text-white" href="{{ route('login') }}">Login</a></button></li>
-            <li class = "nav-item"><button type="button" class="btn btn-info mr-3"><a class = "text-white" href="{{ route('register') }}">Register</a></button></li>
+            <li class = "nav-item"><a class = "text-white btn mr-3 btn-info" href="{{ route('login') }}">Login</a></li>
+            <li class = "nav-item"><a class = "text-white btn mr-3 btn-info" href="{{ route('register') }}">Register</a></li>
           @else
-            <li class = "nav-item"><button type="button" class="btn btn-info mr-3"><a class = "text-white" href="{{ route('logout') }}">Logout</a></button></li>
+            <li class = "nav-item"><a class = "text-white btn mr-3 btn-info" href="{{ route('logout') }}">Logout</a></li>
           @endif
 
     </ul>
