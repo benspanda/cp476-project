@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('title', 'Course Chat - Teach It')
+
 @section('content')
   <div class="course-header">
     <h2>{{ $course->code }}: {{ $course->name }}</h2>

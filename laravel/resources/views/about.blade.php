@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('title', 'About - Teach It')
+
 @section('content')
     <center class="about-title"><h1>Why Teach-It?</h1></center><br><br>
     <div class = "container d-flex justify-content-center">

@@ -5,8 +5,9 @@
   {{-- META --}}
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Join Course Page</title>
+  <title>@yield('title', 'Teach-It')</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" type="image/png" href="/images/logo.png"/>
 
   {{-- CSRF Validation --}}
   <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -29,7 +30,7 @@
       <a href="/">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item">
-            <img class = "ml-3 mr-3" src="https://openclipart.org/download/289348/Pencil-2d.svg" width="60" alt="Colorful Rainbow Clipart" />
+            <img class = "ml-3 mr-3" src="/images/logo.png" width="60" alt="Colorful Rainbow Clipart" />
           </li>
           <li class="nav-item">
               <h1>Teach-It</h1>

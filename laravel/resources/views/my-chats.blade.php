@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('title', 'My Chats - Teach It')
+
 @section('content')
   <br><center><h2>My Courses</h2></center>
   <div class="container">
