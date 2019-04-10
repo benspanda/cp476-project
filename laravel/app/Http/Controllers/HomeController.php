@@ -72,7 +72,7 @@ class HomeController extends Controller
 
         // check that the user isnt already in a course
         $existing = UserXCourse::where('user_id', Auth::id())->where('course_id', $course->id)->get();
-        if(!empty($existing)) {
+        if(count($existing)) {
             return back()->withInput()->withErrors(['Error: You are already in that course.']);
         }
 
