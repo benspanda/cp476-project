@@ -297,7 +297,7 @@ a:hover {
   width: 100%;
 }
 
-.my-courses a {
+.my-courses > a {
   display: flex;
   flex-direction: column;
   border: 1px solid #d0d0d0;
@@ -309,7 +309,7 @@ a:hover {
   transition: background-color .3s;
 }
 
-.my-courses a:hover {
+.my-courses > a:hover {
   text-decoration: none;
   background-color: #e4e4e4;
 }
@@ -371,4 +371,26 @@ a:hover {
 
 form .btn-info {
   width: 100%;
+}
+
+.no-courses-message {
+  font-size: 18px;
+  margin-top: 15px;
+}
+
+.add-course-actions {
+  display: flex;
+  justify-content: center;
+}
+
+.add-course-actions a {
+  margin: 15px;
+}
+
+.bg-info {
+  background-color: #e5811b !important;
+}
+
+.bg-info a.text-white:hover {
+  color: #e5811b !important;
 }
