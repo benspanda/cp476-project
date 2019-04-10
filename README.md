@@ -1,4 +1,4 @@
-# cp476-project
+# CP476 project: Teach-It
 
 ## Project structure
 `/old-design` - Our original design
